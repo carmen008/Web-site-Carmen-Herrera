@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -24,5 +24,38 @@
 .navbar li a:hover {
     background-color: rgb(251, 251, 251);
     color: antiquewhite;
-    border-bottom: 2px rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+header,
+.page,
+footer {
+  min-height: 200px;
+  background: grey;
+}
+
+.menu {
+  min-height: 200px;
+  display: inline-block;
+  background: blue;
+  width: 30%;
+}
+
+.content {
+  min-height: 200px;
+  display: inline-block;
+  background: lightgrey;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .menu,
+  .content {
+    width: 100%;
+    display: block;
+  }
 }
