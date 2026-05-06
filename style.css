@@ -12,6 +12,20 @@
     display: flex;
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
 .navbar li a {
     display: block;
     color: rgb(255, 255, 255);
@@ -27,35 +41,19 @@
     border-bottom: 2px solid rgb(255, 255, 255);
 }
 
-header,
-.page,
-footer {
-  min-height: 200px;
-  background: grey;
-}
+@media (width <= 768px) {
+    .hamburger {
+        display: block;
+        background-color: rgb(147, 34, 212);
+    }
 
-.menu {
-  min-height: 200px;
-  display: inline-block;
-  background: blue;
-  width: 30%;
-}
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.content {
-  min-height: 200px;
-  display: inline-block;
-  background: lightgrey;
-  width: 70%;
-}
-
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .menu,
-  .content {
-    width: 100%;
-    display: block;
-  }
+    #menu-toggle:checked + .hamburger + ul {
+        display: flex;
+    }
 }
